@@ -12,6 +12,9 @@ public class emailvalidator{
 		pattern = Pattern.compile(EMAIL_REGEX, Pattern.CASE_INSENSITIVE);	// initialize the Pattern object
 	}
 
+	public emailvalidator() {
+	}
+
 	public boolean validateEmail(String email) {
 		matcher = pattern.matcher(email);
 		return matcher.matches();

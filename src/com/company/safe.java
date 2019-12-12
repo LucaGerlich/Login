@@ -2,11 +2,6 @@ package com.company;
 
 import java.io.FileWriter;
 import java.util.*;
-//import java.io.IOException;
-//import java.security.NoSuchAlgorithmException;
-//import javax.crypto.KeyGenerator;
-//import javax.crypto.SecretKey;
-//import javax.swing.JOptionPane;
 
 public class safe{
     Calendar cal = Calendar.getInstance();
@@ -113,4 +108,8 @@ public class safe{
     public void decrypt(String name, String pw, String email){
         System.out.println("Entschlüsselt...\n");
     }
+
+    public void ServerStop() {
+        System.exit(0);
+	}
 }

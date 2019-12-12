@@ -20,6 +20,7 @@ public class Main{
         int Auswahl;
         final safe safe = new safe();
         final validator validator = new validator();
+        final emailvalidator emailvalidator = new emailvalidator();
         //final jframe jframe = new jframe();
 
         do {
@@ -46,8 +47,16 @@ public class Main{
                         System.out.println(e);
                     }
                     try {
+
+                    validator.validatorcheck();
+                        /*
                         System.out.println("Geben Sie ihre Email-Adresse ein:");
-                        email = sc.next();
+                        validator.validatorcheck(email);
+                        if (emailvalidator.validateEmail(email) == true) {
+                            email = sc.next();
+                        } else {
+                            System.out.println("E-Mail ist nicht richtig eingegeben");
+                    }*/
                     } catch (final Exception s) {
                         System.out.println(s);
                     }
@@ -82,6 +91,6 @@ public class Main{
                     break;
             }
         } while (Auswahl < 6);
-        System.exit(0);
+        safe.ServerStop();
     }
 }
