@@ -83,7 +83,7 @@ public class Main{
                     break;
                 case 6:
                     System.out.println(email);
-                    validator.validatorcheck(email);
+                    validator.validatorcheck();
                     break;
                 case 7:
                     sc.close();
