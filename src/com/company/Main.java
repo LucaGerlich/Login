@@ -23,23 +23,18 @@ public class Main{
         String pw = null;
         int Auswahl;
         final safe safe = new safe();
-        //final validatorcheck validator = new validatorcheck();
-        final validatorchecktest validatortest = new validatorchecktest();
-        //final jframe jframe = new jframe();
+        final debugmenu debugmenu = new debugmenu();
 
         do {
-            //jframe.startjframe();
             final Scanner sc = new Scanner(System.in);
             final Scanner in = new Scanner(System.in);
             System.out.println("MENU\n" +
                     "1: Registrieren \n" +
                     "2: Einloggen\n" +
                     "3: Account löschen\n"+
-                    "4: Verschlüsseln\n"+
-                    "5: Verschlüsselte Datei auslesen\n"+
-                    "6: Check for Validation\n"+
+                    "4: Debug Menu\n"+
                     "\n" +
-                    "7: Beenden");
+                    "5: Beenden");
             Auswahl = in.nextInt();
 
             switch (Auswahl) {
@@ -73,26 +68,15 @@ public class Main{
                     safe.deleteAdresse(name, pw, email);
                     break;
                 case 4:
-                    safe.encrypt(name, pw, email);
+                    debugmenu.menu(name, pw, email);
                     break;
                 case 5:
-                    safe.decrypt(name, pw, email);
-                    break;
-                case 6:
-                    try {
-                        validatortest.validator(email);
-                        
-                    } catch (Exception e) {
-                        System.out.println(e);
-                    }
-                    break;
-                case 7:
                     sc.close();
                     in.close();
                     safe.ServerStop();
                     break;
             }
-        } while (Auswahl < 7);
+        } while (Auswahl < 5);
         safe.ServerStop();
     }
 }
