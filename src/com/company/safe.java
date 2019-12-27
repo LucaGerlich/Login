@@ -28,10 +28,14 @@ public class safe{
                     cal.get( Calendar.MINUTE ) + ":" +
                     cal.get( Calendar.SECOND ) );
             fw.close();
+            System.out.println("\n" + 
+                                "Name: " + name +
+                                "\nEmail: " + email + 
+                                "\npw: " + pw);
         } catch (Exception e) {
             System.out.println(e);
         }
-        System.out.println("gespeichert...\n");
+        System.out.println("\ngespeichert...\n");
     }
 
     public void login(String name, String pw, String email) {
@@ -55,7 +59,7 @@ public class safe{
         }
     }
 
-    public void deleteAdresse() {
+    public void deleteAdresse(String name, String pw, String email) {
         Scanner deleteinput  = new Scanner(System.in);
         System.out.println("Sind sie sich sicher?\n" +
                     "1: JA \n" +
@@ -65,6 +69,7 @@ public class safe{
         switch(YesNo){
             case 1:
               try {
+                  //todo: Strings überschreiben sodas sie nicht mehr verfügbar sind!
                 FileWriter fw = new FileWriter("text.txt");
                 fw.write("Name: ");
                 fw.write("\nPasswort: ");
@@ -102,10 +107,23 @@ public class safe{
             System.out.println(p);
         }
         System.out.println("Verschlüsselt...\n");
-
     }
 
     public void decrypt(String name, String pw, String email){
+        try {
+            FileWriter fwe = new FileWriter("decrypt.txt");
+            fwe.write("\n");
+            fwe.write("\nErstellt: ");
+            fwe.write("\nDatum: " + cal.get(Calendar.DAY_OF_MONTH) +
+                    "." + (cal.get(Calendar.MONTH) + 1) +
+                    "." + cal.get(Calendar.YEAR));
+            fwe.write("\nUhrzeit: " + cal.get(Calendar.HOUR_OF_DAY) + ":" +
+                    cal.get(Calendar.MINUTE) + ":" +
+                    cal.get(Calendar.SECOND));
+            fwe.close();
+            } catch (Exception p) {
+            System.out.println(p);
+        }
         System.out.println("Entschlüsselt...\n");
     }
 

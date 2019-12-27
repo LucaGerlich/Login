@@ -10,6 +10,10 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.io.IOException;
 
+/**
+ * @author Lucag
+ */
+
 public class Main{
 
     public static void main(final String[] args) throws IOException, NoSuchPaddingException, InvalidKeyException, NoSuchAlgorithmException, IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException, InvalidKeySpecException {
@@ -19,8 +23,8 @@ public class Main{
         String pw = null;
         int Auswahl;
         final safe safe = new safe();
-        final validator validator = new validator();
-        final emailvalidator emailvalidator = new emailvalidator();
+        //final validatorcheck validator = new validatorcheck();
+        final validatorchecktest validatortest = new validatorchecktest();
         //final jframe jframe = new jframe();
 
         do {
@@ -41,27 +45,21 @@ public class Main{
             switch (Auswahl) {
                 case 1:
                     try {
-                        System.out.println("Geben Sie ihren Name ein:");
+                        System.out.println("Geben Sie ihren Name ein: ");
                         name = sc.next();
                     } catch (final Exception e) {
                         System.out.println(e);
                     }
                     try {
+                        System.out.println("Geben Sie ihre EMail ein: ");
+                        email = sc.next();
 
-                    validator.validatorcheck();
-                        /*
-                        System.out.println("Geben Sie ihre Email-Adresse ein:");
-                        validator.validatorcheck(email);
-                        if (emailvalidator.validateEmail(email) == true) {
-                            email = sc.next();
-                        } else {
-                            System.out.println("E-Mail ist nicht richtig eingegeben");
-                    }*/
+                        //validator.validator();
                     } catch (final Exception s) {
                         System.out.println(s);
                     }
                     try {
-                        System.out.println("Geben Sie ihr Passwort ein:");
+                        System.out.println("Geben Sie ein Passwort ein: ");
                         pw = sc.next();
                     } catch (final Exception h) {
                         System.out.println(h);
@@ -72,25 +70,29 @@ public class Main{
                     safe.login(name, pw, email);
                     break;
                 case 3:
-                    safe.deleteAdresse();
+                    safe.deleteAdresse(name, pw, email);
                     break;
                 case 4:
-                    //s1.KeyGen();
                     safe.encrypt(name, pw, email);
                     break;
                 case 5:
                     safe.decrypt(name, pw, email);
                     break;
                 case 6:
-                    System.out.println(email);
-                    validator.validatorcheck();
+                    try {
+                        validatortest.validator(email);
+                        
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
                     break;
                 case 7:
                     sc.close();
                     in.close();
+                    safe.ServerStop();
                     break;
             }
-        } while (Auswahl < 6);
+        } while (Auswahl < 7);
         safe.ServerStop();
     }
 }
