@@ -50,7 +50,7 @@ public class debugmenu {
                     }
                 case 4:
                     try {
-                        //validatorcheck.validator();
+                        validator.validator();
                     } catch (Exception e) {
                         System.out.println(e);
                         debuginput.close();
