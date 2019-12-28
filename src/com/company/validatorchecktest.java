@@ -8,7 +8,13 @@ public class validatorchecktest {
 
         try {
             boolean valid = emailvalidator.validateEmail(email);
-            System.out.println("Email ID " + email + " is valid? " + valid);
+
+            if (valid == true) {
+                System.out.println("Email ID: " + email + " is valid!");
+            } else {
+                System.out.println("Email ID: '" + email + "' is not valid!");
+            }
+            //System.out.println("Email ID " + email + " is valid? " + valid);
             
         } catch (Exception e) {
             System.out.println(e);

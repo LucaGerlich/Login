@@ -8,8 +8,8 @@ public class debugmenu {
             int deAuswahl;
             final safe safe = new safe();
             final jframe jframe = new jframe();
-            final validatorcheck validator = new validatorcheck();
-            final validatorchecktest validatortest = new validatorchecktest();
+            final validatorcheck validatorcheck = new validatorcheck();
+            final validatorchecktest validatorchecktest = new validatorchecktest();
             
             Scanner debuginput  = new Scanner(System.in);
             System.out.println("Debuggmenu\n" +
@@ -43,14 +43,16 @@ public class debugmenu {
                 case 3:
                     try {
                         System.out.println(email);
-                        validatortest.validator(email);
+                        validatorchecktest.validator(email);
+                        break;
                     } catch (Exception e) {
                         System.out.println(e);
                         debuginput.close();
                     }
                 case 4:
                     try {
-                        validator.validator();
+                        validatorcheck.validator();
+                        break;
                     } catch (Exception e) {
                         System.out.println(e);
                         debuginput.close();
@@ -59,15 +61,18 @@ public class debugmenu {
                 case 5:
                     try {
                         jframe.startjframe();
+                        break;
                     } catch (Exception e) {
                     }
                 case 6:
                     try {
+                        break;
                     } catch (Exception e) {
                     }
                 case 7:
                     try {
                         safe.ServerStop();
+                        break;
                     } catch (Exception e) {
                     }
             

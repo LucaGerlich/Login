@@ -76,7 +76,7 @@ public class Main{
                     safe.ServerStop();
                     break;
             }
-        } while (Auswahl < 5);
+        } while (Auswahl < 10);
         safe.ServerStop();
     }
 }

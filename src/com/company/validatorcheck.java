@@ -18,7 +18,13 @@ public class validatorcheck {
         do {
             try {
                 boolean valid = emailvalidator.validateEmail(tempEmail);
-                System.out.println("Email ID " + tempEmail + " is valid? " + valid);
+
+                if (valid == true) {
+                    System.out.println("Email ID: " + tempEmail + " is valid!");
+                } else {
+                    System.out.println("Email ID: '" + tempEmail + "' is not valid!");
+                }
+                //System.out.println("Email ID " + tempEmail + " is valid? " + valid);
                 valinput.close(); 
                 return;
             
