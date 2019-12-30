@@ -14,7 +14,6 @@ public class validatorchecktest {
             } else {
                 System.out.println("Email ID: '" + email + "' is not valid!");
             }
-            //System.out.println("Email ID " + email + " is valid? " + valid);
             
         } catch (Exception e) {
             System.out.println(e);

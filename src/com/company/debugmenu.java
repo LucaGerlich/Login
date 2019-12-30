@@ -16,10 +16,11 @@ public class debugmenu {
                     "1: Datei Verschlüsseln\n" +
                     "2: Verschlüsselte Datei auslesen\n" +
                     "3: Check for Validation\n" + 
-                    "4: Validation with extra steps\n" +
-                    "5: JFrame starten\n" +
-                    "6: Zurück\n" +
-                    "7: Kill Program");
+                    "4: Validation with extra steps\n" + 
+                    "5: Check for Validation(Beta)\n" +
+                    "6: JFrame starten\n" +
+                    "7: Zurück\n" +
+                    "8: Kill Program");
             deAuswahl = debuginput.nextInt();
 
             switch (deAuswahl) {
@@ -57,23 +58,36 @@ public class debugmenu {
                         System.out.println(e);
                         debuginput.close();
                     }
-
                 case 5:
+                    try {
+                        validatorcheck.validator();
+                        break;
+                    } catch (Exception e) {
+                        System.out.println(e);
+                        debuginput.close();
+                    }
+                case 6:
                     try {
                         jframe.startjframe();
                         break;
                     } catch (Exception e) {
+                        System.out.println(e);
+                        debuginput.close();
                     }
-                case 6:
+                case 7:
                     try {
                         break;
                     } catch (Exception e) {
+                        System.out.println(e);
+                        debuginput.close();
                     }
-                case 7:
+                case 8:
                     try {
                         safe.ServerStop();
                         break;
                     } catch (Exception e) {
+                        System.out.println(e);
+                        debuginput.close();
                     }
             
                 default:

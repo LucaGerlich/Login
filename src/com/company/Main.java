@@ -48,8 +48,6 @@ public class Main{
                     try {
                         System.out.println("Geben Sie ihre EMail ein: ");
                         email = sc.next();
-
-                        //validator.validator();
                     } catch (final Exception s) {
                         System.out.println(s);
                     }

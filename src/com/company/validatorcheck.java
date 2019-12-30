@@ -24,7 +24,6 @@ public class validatorcheck {
                 } else {
                     System.out.println("Email ID: '" + tempEmail + "' is not valid!");
                 }
-                //System.out.println("Email ID " + tempEmail + " is valid? " + valid);
                 valinput.close(); 
                 return;
             
