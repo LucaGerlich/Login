@@ -1,6 +1,6 @@
 package com.company;
 
-import java.io.FileWriter;
+import java.io.*;
 import java.util.*;
 
 public class safe{
@@ -69,7 +69,7 @@ public class safe{
         switch(YesNo){
             case 1:
               try {
-                  //todo: Strings überschreiben sodas sie nicht mehr verfügbar sind!
+                  //todo: Strings überschreiben so das sie nicht mehr verfügbar sind!
                 FileWriter fw = new FileWriter("text.txt");
                 fw.write("Name: ");
                 fw.write("\nPasswort: ");

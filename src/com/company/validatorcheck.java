@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class validatorcheck {
 
     String tempEmail = null;
+    String email = null;
     Boolean valid = null;
     Boolean done = false;
 
@@ -32,8 +33,36 @@ public class validatorcheck {
                 valinput.close();
             }
         } while (!done);
-
-
-        
     }
+
+    public void validatorcheckbeta(String email){
+        try {
+            boolean valid = emailvalidator.validateEmail(email);
+
+            if (valid == true) {
+                System.out.println("Email ID: " + email + " is valid!");
+            } else {
+                System.out.println("Email ID: '" + email + "' is not valid!");
+            }
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public void validatorchecktest(String email){
+        try {
+            boolean valid = emailvalidator.validateEmail(email);
+
+            if (valid == true) {
+                System.out.println("Email ID: " + email + " is valid!");
+            } else {
+                System.out.println("Email ID: '" + email + "' is not valid!");
+            }
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
 }

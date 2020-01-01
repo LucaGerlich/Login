@@ -8,7 +8,7 @@ public class debugmenuextention1 {
         int de1Auswahl;
         String email = null;
 
-        final validatorcheckbeta validatorcheckbeta = new validatorcheckbeta();
+        final validatorcheck validatorcheck = new validatorcheck();
         
         do {
             final Scanner sc  = new Scanner(System.in);
@@ -23,7 +23,7 @@ public class debugmenuextention1 {
                     try {
                         System.out.println("Geben Sie ihre EMail ein: ");
                         email = sc.next();
-                        validatorcheckbeta.validator(email);
+                        validatorcheck.validatorcheckbeta(email);
                     } catch (final Exception s) {
                         System.out.println(s);
                     }

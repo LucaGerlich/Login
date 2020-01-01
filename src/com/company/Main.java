@@ -24,6 +24,7 @@ public class Main{
         int Auswahl;
         final safe safe = new safe();
         final debugmenu debugmenu = new debugmenu();
+        //final validatorcheck validatorcheck = new validatorcheck();
 
         do {
             final Scanner sc = new Scanner(System.in);
@@ -46,6 +47,7 @@ public class Main{
                         System.out.println(e);
                     }
                     try {
+                        //validatorcheck.validatorcheckbeta(email);
                         System.out.println("Geben Sie ihre EMail ein: ");
                         email = sc.next();
                     } catch (final Exception s) {

@@ -9,7 +9,6 @@ public class debugmenu {
             final safe safe = new safe();
             final jframe jframe = new jframe();
             final validatorcheck validatorcheck = new validatorcheck();
-            final validatorchecktest validatorchecktest = new validatorchecktest();
             
             Scanner debuginput  = new Scanner(System.in);
             System.out.println("Debuggmenu\n" +
@@ -44,7 +43,7 @@ public class debugmenu {
                 case 3:
                     try {
                         System.out.println(email);
-                        validatorchecktest.validator(email);
+                        validatorcheck.validatorchecktest(email);
                         break;
                     } catch (Exception e) {
                         System.out.println(e);
