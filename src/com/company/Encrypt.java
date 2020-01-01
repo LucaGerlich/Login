@@ -1,11 +1,9 @@
 package com.company;
-/*
+
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
-import java.util.*;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -58,4 +56,3 @@ public class Encrypt {
     public void loginEnc(String encName, String encPw, String encEmail) {
     }
 }
-*/
